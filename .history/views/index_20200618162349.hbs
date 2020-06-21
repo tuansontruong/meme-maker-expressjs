@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <input type="text" name="fileupload" accept="image/jpg, image/gif, image/png" />
+  <button type="submit">Upload your image</button>
+</form>
+
+{{error}}

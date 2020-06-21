@@ -1,0 +1,8 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    height: calc(100vh - 410px)
+}
+
+a {
+    color: #00B7FF;
+}
