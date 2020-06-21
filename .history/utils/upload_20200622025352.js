@@ -17,14 +17,13 @@ var storage = multer.diskStorage({
                     return cb(new Error("Duplicated Image", null))
                 }
             }
-            const allow = ["image/jpg", "image/gif", "image/png", "image/jpeg"];
-            if (!allow.includes(file.mimetype)) {
-                return cb(new Error("file is not allowed", null))
-            }
-            cb(null, Date.now() + '-' + file.originalname)
         });
 
-
+        const allow = ["image/jpg", "image/gif", "image/png", "image/jpeg"];
+        if (!allow.includes(file.mimetype)) {
+            return cb(new Error("file is not allowed", null))
+        }
+        cb(null, Date.now() + '-' + file.originalname)
     }
 })
 
