@@ -9,12 +9,11 @@ var storage = multer.diskStorage({
         cb(null, pathToOriginal)
     },
     filename: function(req, file, cb) {
-
         const allow = ["image/jpg", "image/gif", "image/png"];
         if (!allow.includes(file.mimetype)) {
             return cb(new Error("file is not allowed", null))
         }
-        cb(null, Date.now() + '-' + file.originalname)
+        cb(null, +Date.now() + '-' + file.originalname)
     }
 })
 

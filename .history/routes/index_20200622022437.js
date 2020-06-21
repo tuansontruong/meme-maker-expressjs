@@ -36,8 +36,8 @@ router.post("/upload", upload.single("fileupload"), ((req, res, next) => {
 }));
 
 router.post("/uploadMeme", ((req, res, next) => {
-    let header = req.body.header || "";
-    let footer = req.body.footer || "";
+    let header = req.body.header;
+    let footer = req.body.footer;
     let img = req.body.imgSrc;
     Jimp.read(pathToMemes + img, (err, meme) => {
         let w = meme.bitmap.width;
@@ -46,7 +46,7 @@ router.post("/uploadMeme", ((req, res, next) => {
         Jimp.loadFont(Jimp.FONT_SANS_128_WHITE)
             .then(font => {
                 meme.print(font, w / 2 - Jimp.measureText(font, header) / 2, 10, header);
-                meme.print(font, w / 2 - Jimp.measureText(font, header) / 2, h - 120, footer)
+                meme.print(font, w / 2 - Jimp.measureText(font, header) / 2, h - 100, footer)
                 let name = Date.now() + '.png'
                 meme.write('public/images/memes/' + name); // save
                 const memes = loadMemes();

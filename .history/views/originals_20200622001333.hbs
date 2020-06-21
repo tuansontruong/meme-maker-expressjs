@@ -1,0 +1,20 @@
+
+<h1>This is originals</h1>
+{{#if images}}
+{{#each images}}
+    <img class="original-img" height="200" src="{{../path}}{{filename}}">
+{{/each}}
+{{/if}}
+
+<div class="modal hide" role="document">
+          <div class="modal-content">
+            <img height="400" class="modal-img" src="/uploads/1582089236309X-X-Everywhere.jpg">
+        <form action="/addtext/1582089236309X-X-Everywhere.jpg" method="post">
+            <input class="input-meme" name="top" type="text" placeholder="top text">
+            <input class="input-meme" name="bottom" type="text" placeholder="bottom text">
+            <div class="modal-footer">
+              <input type="submit" class="btn btn-primary" value="Save">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form></div>
+      </div>
