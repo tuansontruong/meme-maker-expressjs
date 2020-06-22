@@ -53,9 +53,8 @@ router.post("/uploadMeme", ((req, res, next) => {
                 const memes = loadMemes();
                 memes.push({ filename: name })
                 saveMemes(memes)
-                    // console.log(memes);
-                    // res.render("memes", { images: memes, path: '/images/memes/' })
-                res.redirect("/memes")
+                console.log(memes);
+                res.render("memes", { images: memes, path: '/images/memes/' })
             })
 
     });
